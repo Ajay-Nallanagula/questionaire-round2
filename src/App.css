@@ -1,0 +1,442 @@
+:root {
+	--main: #bc9b56;
+	--bg: #292a31;
+	--dark: #333333;
+	--outline: #484848;
+	--four: #707070;
+	--five: #5f533e;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	background-color: var(--bg);
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+h1 {
+	font-family: 'Arial Narrow Bold', sans-serif;
+	font-weight: lighter;
+	line-height: 1.3;
+	text-align: center;
+}
+h2 {
+	line-height: 1.3;
+	text-align: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------- home -----------------*/
+
+.nav {
+	width: 90vw;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.5rem auto;
+}
+
+.nav img {
+	width: 50px;
+	margin-left: -30px;
+}
+.nav a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.nav .prev-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.nav .icons {
+	color: var(--main);
+	font-size: 3rem;
+}
+
+.home-main {
+	width: 90vw;
+	height: 85vh;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.home-main img {
+	height: 60px;
+}
+
+.home-main h1 {
+	padding-top: 0.5rem;
+	color: var(--four);
+}
+.home-main p {
+	line-height: 1.3;
+	padding-bottom: 1rem;
+	margin-top: 0;
+}
+.home-main button {
+	background-color: transparent;
+	outline: none;
+	border: 2px solid var(--main);
+	color: #fff;
+	padding: 0.8rem 1.5rem;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+/* --------------------------------Questionnaire---------------- */
+.questionnaire {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.indicators-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.indicator {
+	background-color: var(--outline);
+	height: 2px;
+	width: 40px;
+	margin: 0 0.5rem;
+}
+.active-indicator {
+	background-color: var(--main);
+}
+
+.questionnaire .options-container-one {
+	max-width: 400px;
+	margin: auto;
+	transform: translateX(-6%);
+}
+/* ---------------------------------------------radio buttons */
+
+.ul {
+	list-style: none;
+	overflow: auto;
+}
+
+ul li {
+	color: #fff;
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 70px;
+	margin-bottom: 0.8rem;
+	border: 2px solid var(--outline);
+	background-color: var(--dark);
+}
+ul li:hover {
+	border: 2px solid var(--main);
+}
+
+ul li input[type='radio'] {
+	position: absolute;
+	visibility: hidden;
+}
+
+ul li label {
+	display: block;
+	position: relative;
+	padding: 15px 35px 35px 70px;
+	margin: 10px auto;
+	height: 30px;
+	z-index: 9;
+	cursor: pointer;
+}
+
+ul li .check {
+	display: block;
+	position: absolute;
+	border: 2px solid var(--outline);
+	border-radius: 100%;
+	height: 25px;
+	width: 25px;
+	top: 22px;
+	left: 20px;
+	z-index: 5;
+}
+
+ul li .check::before {
+	display: block;
+	position: absolute;
+	content: '';
+	border-radius: 100%;
+	height: 15px;
+	width: 15px;
+	top: 3px;
+	left: 3px;
+	margin: auto;
+}
+
+input[type='radio']:checked ~ .check {
+	border: 2px solid var(--main);
+}
+
+input[type='radio']:checked ~ .check::before {
+	background: var(--main);
+}
+.questionnaire input[type='radio']:checked li {
+	border: 2px solid red !important;
+}
+
+.next-question {
+	margin: 2rem auto;
+	margin-bottom: 5rem;
+}
+.next-question-button {
+	border: 2px solid #997f46bb;
+	color: var(--four);
+	background-color: var(--bg);
+	padding: 0.8rem 2rem;
+	outline: none;
+}
+.next-question-button-active {
+	border: 2px solid var(--main);
+	color: #fff;
+	outline: none;
+	background-color: var(--bg);
+	padding: 0.8rem 2rem;
+}
+
+/* -----------------------------------------Question2---------------- */
+
+.question2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.question2-input input {
+	background-color: var(--dark);
+	border: 2px solid var(--outline);
+	color: var(--four);
+	font-size: 16px;
+	border-radius: 10px;
+	width: 400px;
+	height: 250px;
+	text-align: left;
+	padding: 1rem;
+}
+.question2-input input:focus {
+	color: #fff;
+
+	outline: none;
+}
+
+/* ----------------------------------------------------------images-page - 3 */
+.image_picker {
+	width: 50%;
+	margin: auto;
+}
+
+.image_picker .responsive {
+	position: relative;
+	margin: 5px 7px;
+	float: left;
+	opacity: 1;
+}
+
+.image_picker .responsive .thumbnail {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 150px;
+	opacity: 1;
+	margin: 0;
+}
+
+.image_picker .responsive .thumbnail:hover {
+	box-shadow: 0 0 2px 1px rgba(186, 136, 0, 0.7);
+}
+
+.image_picker .responsive .selected {
+	border: 2.5px solid var(--main);
+	background-color: transparent;
+}
+
+.image_picker .responsive:hover {
+	cursor: pointer;
+}
+
+.image_picker .responsive .checked {
+	display: none;
+}
+
+.image_picker .selected {
+	opacity: 0.7;
+}
+
+.image_picker .selected .checked {
+	display: inline-block;
+	transition: 0.5s ease;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.image_picker .clear {
+	clear: both;
+}
+
+/* ----------------------------------------------last-page---------- */
+
+.last-page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	text-align: center;
+}
+.last-page-container img {
+	width: 200px;
+	margin-top: 4rem;
+}
+.last-page-container h2 {
+	margin-bottom: 0rem;
+}
+.last-page-buttons-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2rem;
+	margin-bottom: 7rem;
+}
+.last-page-buttons-container a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	outline: none;
+	border: 2px solid var(--main);
+	padding: 1px 1.5rem;
+	cursor: pointer;
+	margin-right: 0.6rem;
+	font-size: 14px;
+}
+
+.take-me-home-btn {
+	color: var(--main);
+	font-size: 2.5rem;
+	padding-right: 10px;
+}
+.last-page-btn {
+	background-color: transparent;
+	outline: none;
+	border: 2px solid var(--main);
+	color: #fff;
+	padding: 0.8rem 1.5rem;
+	cursor: pointer;
+	margin-left: 0.6rem;
+}
+[data-tooltip] {
+	position: relative;
+	transition: 0.3s ease;
+}
+[data-tooltip]:hover::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	top: 0%;
+	left: 0;
+	right: 0;
+	background-color: var(--main);
+	outline: 2px solid var(--main);
+	border: 2px solid var(--main);
+	color: #fff;
+	padding: 0 2rem;
+	cursor: pointer;
+	font-size: 1.8rem;
+}
+
+/* --------------------------------------page-four---------------------- */
+.page-four-container {
+}
+.page-four-container ::placeholder {
+	color: #fff;
+}
+.page-four-container label {
+	color: white;
+	font-size: 14px;
+}
+
+.page-four-container input {
+	width: 350px;
+	padding: 17px;
+	background-color: var(--dark);
+	border: 2px solid var(--outline);
+	margin-top: 10px;
+	outline: none;
+	color: #fff;
+	font-size: 1rem;
+}
+.page-four-container input:focus {
+	color: #fff;
+	border-left: 6px solid var(--main);
+}
+
+.field-with-error {
+	margin-bottom: 10px;
+}
+.field-with-error:focus .page-four-container label {
+	color: #fff important;
+}
+.field-with-error {
+	margin-bottom: 10px;
+}
+
+.field-with-error .field-error {
+	border: 1px solid red;
+	color: red;
+}
+
+.page-four-container select {
+	width: 350px;
+	padding: 17px;
+	background-color: var(--dark);
+	border: 2px solid var(--outline);
+	margin-top: 10px;
+	outline: none;
+	color: #fff;
+	font-size: 1rem;
+	cursor: pointer;
+}
+.page-four-container select option {
+	background-color: var(--dark);
+	border: 2px solid var(--outline);
+}
+.select option:hover {
+	background-color: var(--four);
+	border: 2px solid var(--outline);
+}
+
+.liBorder {
+	border: 2px solid var(--main);
+}
+
+.textAreaCls{
+	border-radius: 8px !important;
+    background-color: var(--bg);
+    color: white;
+}
